@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="kartheek.springframework"/>
+    <bean id="welcomeController" class="kartheek.springframework.di.Controllers.WelcomeController"/>
+
+    <bean id="welcomeFactory" class="kartheek.springframework.di.Services.WelcomeFactory"/>
+
+    <bean id="tamil" factory-bean="welcomeFactory" factory-method="createWelcomeService">
+        <constructor-arg value="tam"/>
+    </bean>
+
+    <bean id="welcomeServiceHindi" factory-bean="welcomeFactory" factory-method="createWelcomeService">
+        <constructor-arg value="hin"/>
+    </bean>
+
+</beans>

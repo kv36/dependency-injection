@@ -1,5 +1,6 @@
 package kartheek.springframework.di.Services;
 
+//@Component
 public class WelcomeHindi implements WelcomeService{
 
     @Override
