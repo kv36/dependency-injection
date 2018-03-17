@@ -1,11 +1,5 @@
 package kartheek.springframework.di.Config;
 
-import kartheek.springframework.di.Services.WelcomeFactory;
-import kartheek.springframework.di.Services.WelcomeService;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
-
 @org.springframework.context.annotation.Configuration
 public class Configuration {
 
@@ -27,19 +21,19 @@ public class Configuration {
 //        return new WelcomeTelugu();
 //    }
 
-    @Bean
-    @Profile({"default", "english"})
-    @Primary
-    public WelcomeService welcomeServiceEnglish(WelcomeFactory welcomeFactory) {
-        return welcomeFactory.createWelcomeService("en");
-    }
+//    @Bean
+//    @Profile({"default", "english"})
+//    @Primary
+//    public WelcomeService welcomeServiceEnglish(WelcomeFactory welcomeFactory) {
+//        return welcomeFactory.createWelcomeService("en");
+//    }
 
-    @Bean
-    @Profile("telugu")
-    @Primary
-    public WelcomeService welcomeServiceTelugu(WelcomeFactory welcomeFactory) {
-        return welcomeFactory.createWelcomeService("tel");
-    }
+//    @Bean
+//    @Profile("telugu")
+//    @Primary
+//    public WelcomeService welcomeServiceTelugu(WelcomeFactory welcomeFactory) {
+//        return welcomeFactory.createWelcomeService("tel");
+//    }
 
 //    @Bean("tamil")
 //    public WelcomeService welcomeServiceTamil(WelcomeFactory welcomeFactory) {

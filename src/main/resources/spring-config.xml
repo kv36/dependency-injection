@@ -5,11 +5,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan base-package="kartheek.springframework"/>
-    <bean id="welcomeController" class="kartheek.springframework.di.Controllers.WelcomeController"/>
+    <bean id="welcomeController" class="kartheek.springframework.di.Controllers.WelcomeController">
+        <property name="welcomeService" ref="welcomeServiceDefault"/>
+        <property name="welcomeHindi" ref="welcomeServiceHindi"/>
+        <property name="welcomeTamil" ref="welcomeServiceTamil"/>
+        <property name="welcomeTelugu" ref="welcomeServiceTelugu"/>
+    </bean>
 
     <bean id="welcomeFactory" class="kartheek.springframework.di.Services.WelcomeFactory"/>
 
-    <bean id="tamil" factory-bean="welcomeFactory" factory-method="createWelcomeService">
+    <bean id="welcomeServiceTamil" factory-bean="welcomeFactory" factory-method="createWelcomeService">
         <constructor-arg value="tam"/>
     </bean>
 
@@ -17,4 +22,13 @@
         <constructor-arg value="hin"/>
     </bean>
 
+        <bean id="welcomeServiceTelugu" factory-bean="welcomeFactory" factory-method="createWelcomeService">
+            <constructor-arg value="tel"/>
+        </bean>
+
+    <beans profile="english">
+        <bean id="welcomeServiceDefault" factory-bean="welcomeFactory" factory-method="createWelcomeService" primary="true">
+            <constructor-arg value="en"/>
+        </bean>
+    </beans>
 </beans>

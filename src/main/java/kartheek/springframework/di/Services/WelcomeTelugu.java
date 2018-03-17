@@ -6,7 +6,7 @@ package kartheek.springframework.di.Services;
 public class WelcomeTelugu implements WelcomeService {
     @Override
     public String wishWithWelcomeMessage() {
-        System.out.println("Namaskaram vicheyyandi");
+      //  System.out.println("Namaskaram vicheyyandi");
         return "Namaskaram vicheyyandi";
     }
 }

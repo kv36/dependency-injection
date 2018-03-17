@@ -1,8 +1,6 @@
 package kartheek.springframework.di.Controllers;
 
 import kartheek.springframework.di.Services.WelcomeService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 //@Controller
 //@ComponentScan("define package here ")
@@ -13,25 +11,25 @@ public class WelcomeController {
     private WelcomeService welcomeHindi;
     private WelcomeService welcomeTamil;
 
-    @Autowired
+//    @Autowired
     public void setWelcomeService(WelcomeService welcomeService) {
         this.welcomeService = welcomeService;
     }
 
-    @Autowired
-    @Qualifier("welcomeServiceTelugu")
+//    @Autowired
+//    @Qualifier("welcomeServiceTelugu")
     public void setWelcomeTelugu(WelcomeService welcomeTelugu) {
         this.welcomeTelugu = welcomeTelugu;
     }
 
-    @Autowired
-    @Qualifier("welcomeServiceHindi")
+//    @Autowired
+//    @Qualifier("welcomeServiceHindi")
     public void setWelcomeHindi(WelcomeService welcomeHindi) {
         this.welcomeHindi = welcomeHindi;
     }
 
-    @Autowired
-    @Qualifier("tamil")
+//    @Autowired
+//    @Qualifier("tamil")
     public void setWelcomeTamil(WelcomeService welcomeTamil) {
         this.welcomeTamil = welcomeTamil;
     }
