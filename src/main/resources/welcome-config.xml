@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="welcomeFactory" class="kartheek.springframework.di.Services.WelcomeFactory"/>
+
+    <bean id="welcomeServiceTamil" factory-bean="welcomeFactory" factory-method="createWelcomeService">
+        <constructor-arg value="tam"/>
+    </bean>
+
+    <bean id="welcomeServiceHindi" factory-bean="welcomeFactory" factory-method="createWelcomeService">
+        <constructor-arg value="hin"/>
+    </bean>
+
+    <bean id="welcomeServiceTelugu" factory-bean="welcomeFactory" factory-method="createWelcomeService">
+        <constructor-arg value="tel"/>
+    </bean>
+
+    <beans profile="english">
+        <import resource="classpath*:/english-config.xml"/>
+    </beans>
+
+</beans>
